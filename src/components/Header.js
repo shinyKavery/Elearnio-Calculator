@@ -1,9 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { authActions } from '../store';
 import classes from './Header.module.css';
 
 const Header = () => {
-  const isAuthenticated = useSelector(state=>state.auth.isLoggedIn);
   
+  const isAuthenticated = useSelector(state=>state.auth.isLoggedIn);
+  const dispatch = useDispatch();
+  const logoutHandler = ()=>{
+    dispatch(authActions.logout())
+  }
   return (
     <header className={classes.header}>
       <h1>Elearnio App</h1>
@@ -14,7 +19,7 @@ const Header = () => {
           </li>
          
           <li>
-            <button>Logout</button>
+            <button onClick={logoutHandler}>Logout</button>
           </li>
         </ul>
       </nav>}
