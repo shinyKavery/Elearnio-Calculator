@@ -11,14 +11,14 @@ const Auth = () => {
 const userPasswordInput = useRef("");
   const loginHandler = (event)=>{
     event.preventDefault();
-    dispatch(authActions.login);
+    dispatch(authActions.login());
 console.log(userNameInput.current.value);
   }
   return (
     <React.Fragment>
-     {!authenticationStatus && <main className={classes.auth}>
+     <main className={classes.auth}>
        <section>
-        <form>
+        <form onSubmit={loginHandler}>
           <div className={classes.control}>
             <label htmlFor='email'>Email</label>
             <input type='email' id='email' ref={userNameInput}/>
@@ -30,7 +30,7 @@ console.log(userNameInput.current.value);
           <button onClick={loginHandler}>Login</button>
         </form>
       </section>
-    </main>}
+    </main>
     </React.Fragment>
   );
 };
