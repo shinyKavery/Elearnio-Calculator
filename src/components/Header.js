@@ -1,6 +1,9 @@
 import classes from './Header.module.css';
 
 const Header = () => {
+  const loginHandler = ()=>{
+    
+  }
   return (
     <header className={classes.header}>
       <h1>Elearnio App</h1>
@@ -11,7 +14,7 @@ const Header = () => {
           </li>
          
           <li>
-            <button>Logout</button>
+            <button onClick={loginHandler}>Logout</button>
           </li>
         </ul>
       </nav>
