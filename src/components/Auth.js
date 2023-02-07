@@ -12,6 +12,7 @@ const userPasswordInput = useRef("");
 const reloadInputHandler = ()=>{
   userNameInput.current.value = '';
   userPasswordInput.current.value='';
+  seterrorMessage('');
 }
   const loginHandler = (event)=>{
     event.preventDefault();
