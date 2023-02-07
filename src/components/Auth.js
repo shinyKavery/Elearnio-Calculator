@@ -17,7 +17,6 @@ const userPasswordInput = useRef("");
 seterrorMessage("The username and the password entered is incorrect");
     }
    
-console.log(userNameInput.current.value);
   }
   return (
     <React.Fragment>
